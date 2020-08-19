@@ -17,7 +17,7 @@ class LecturaImagenes():
         imgSinMascara = np.array([])
 
         # Lectura de Imagenes Con Mascara
-        imgConMascara, img_validas = self.recorreFolder(self.PATH_CON_MASK_IMG, hogd)
+        img_validas, imgConMascara= self.recorreFolder(self.PATH_CON_MASK_IMG, hogd)
         print("Se cargaron {0} imagenes con Mascara".format(img_validas))
         
         # vector de etiquetas
@@ -27,7 +27,7 @@ class LecturaImagenes():
         print(etiquetasConMascara)
 
         # Lectura de Imagenes Sin Mascara
-        imgSinMascara, img_validas = self.recorreFolder(self.PATH_SIN_MASK_IMG, hogd)
+        img_validas, imgSinMascara = self.recorreFolder(self.PATH_SIN_MASK_IMG, hogd)
         print("Se cargaron {0} imagenes sin Mascara".format(img_validas))
 
         # Vector de etiquetas
@@ -44,7 +44,7 @@ class LecturaImagenes():
         return matrizImagenes, etiquetas
 
 
-def recorreFolder(self, folder_path, hogd):
+    def recorreFolder(self, folder_path, hogd):
         arreglo_imagenes = np.array([])
         img_validas = 0
 
@@ -72,3 +72,11 @@ def recorreFolder(self, folder_path, hogd):
             arreglo_imagenes = arreglo_imagenes.reshape((img_validas, len(h2)))
         
         return img_validas, arreglo_imagenes
+
+    def test_model_image(self, imagen, clasificador):
+        img = cv2.imread(imagen, cv2.IMREAD_COLOR)
+        hog = cv2.HOGDescriptor()
+        h = hog.compute(img)
+        h2 = h.reshape((1, -1))
+        
+        return(clasificador.predict(h2))
