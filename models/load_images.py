@@ -17,24 +17,20 @@ class LecturaImagenes():
         imgSinMascara = np.array([])
 
         # Lectura de Imagenes Con Mascara
+        print('Cargando Imagenes con mascara....')
         img_validas, imgConMascara= self.recorreFolder(self.PATH_CON_MASK_IMG, hogd)
         print("Se cargaron {0} imagenes con Mascara".format(img_validas))
         
         # vector de etiquetas
         etiquetasConMascara = np.ones(img_validas)
 
-        print(imgConMascara)
-        print(etiquetasConMascara)
-
         # Lectura de Imagenes Sin Mascara
+        print('Cargando Imagenes sin mascara....')
         img_validas, imgSinMascara = self.recorreFolder(self.PATH_SIN_MASK_IMG, hogd)
         print("Se cargaron {0} imagenes sin Mascara".format(img_validas))
 
         # Vector de etiquetas
         etiquetasSinMascara = np.zeros(img_validas)
-
-        print(imgSinMascara)
-        print(etiquetasSinMascara)
 
         # Matriz de imagenes con caracteristicas
         matrizImagenes = np.concatenate((imgConMascara, imgSinMascara), axis=0)
