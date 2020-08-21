@@ -1,2 +1,2 @@
 # MachineLearnigClasification
-Modelos SVN, Regresión Logística para clasificar imágenes de personas con y sin tapabocas
+Modelos SVN, Regresión Logística y Redes neuronales convolucionales para clasificar imágenes de personas con y sin tapabocas
