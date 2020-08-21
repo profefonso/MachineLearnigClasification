@@ -7,8 +7,8 @@ from os.path import abspath
 
 class LecturaImagenes():
 
-    PATH_CON_MASK_IMG = '../images/CON_MASCARA'
-    PATH_SIN_MASK_IMG = '../images/SIN_MASCARA'
+    PATH_CON_MASK_IMG = '../images/ENTRENAMIENTO/CON_MASCARA'
+    PATH_SIN_MASK_IMG = '../images/ENTRENAMIENTO/SIN_MASCARA'
 
     def cargaImagenes(self, hogd=False):
 

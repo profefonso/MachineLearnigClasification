@@ -25,7 +25,5 @@ def predict(file):
     
     return result
 
-predict('images/imagen_923_faces.jpg')
-predict('images/900x600.jpg')
-predict('images/foto_1.jpg')
-predict('images/fgy.jpg')
+predict('images/TEST/imagen_154_mask.jpg')
+predict('images/TEST/imagen_798_faces.jpg')
