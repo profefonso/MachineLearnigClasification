@@ -5,11 +5,11 @@ from sklearn.model_selection import cross_val_score
 
 from load_images import LecturaImagenes
 
-TEST_IMG_SIN_MASCARA = '../images/TEST/imagen_798_faces.jpg'
-TEST_IMG_CON_MASCARA = '../images/TEST/imagen_154_mask.jpg'
+TEST_IMG_SIN_MASCARA = 'images/TEST/imagen_798_faces.jpg'
+TEST_IMG_CON_MASCARA = 'images/TEST/imagen_154_mask.jpg'
 
 lectura_imagenes = LecturaImagenes()
-matriz_imagenes, etiquetas = lectura_imagenes.cargaImagenes(hogd=True)
+matriz_imagenes, etiquetas = lectura_imagenes.cargaImagenes(hogd=False)
 
 print(" ")
 
